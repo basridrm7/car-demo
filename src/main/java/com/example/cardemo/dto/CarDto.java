@@ -1,5 +1,6 @@
 package com.example.cardemo.dto;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
@@ -24,8 +25,11 @@ public class CarDto {
     @NotEmpty(message = "Please provide the plate number of the car!")
     private String plateNumber;
 
+    @Valid
+    @NotNull(message = "Please provide the engine details of the car!")
     private EngineDto engine;
 
+    @Valid
     private OwnerDto owner;
 
     public CarDto() {
